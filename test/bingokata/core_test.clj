@@ -27,7 +27,6 @@
                       (assoc result :called-balls (conj (:called-balls state) (:current result)))))
 
           final-state (reduce f-state initial-state (range 1 76))]
-      (pprint final-state)
       (is (= (count
                (:called-balls final-state))
              75)))))

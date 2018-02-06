@@ -1,9 +1,9 @@
 (ns bingokata.bingo-card
-  (:require [bingokata.column :as column]))
+  (:require
+    [bingokata.bingo-card-spec :as card-spec]
+    [bingokata.column :as column]
+    [clojure.test.check.generators :as gen]
+    [clojure.spec.alpha :as s]))
 
 (defn create []
-  {:b (column/create 1 16 5)
-   :i (column/create 16 31 5)
-   :n (column/create 31 46 4)
-   :g (column/create 46 61 5)
-   :o (column/create 61 76 5)})
+  (gen/generate (s/gen ::card-spec/bingo-card)))
