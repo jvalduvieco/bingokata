@@ -7,3 +7,10 @@
 
 (defn create []
   (gen/generate (s/gen ::card-spec/bingo-card)))
+
+(defn bingo? [card numbers]
+  (->> card
+       vals
+       flatten
+       (every? (set numbers))))
+

@@ -32,8 +32,8 @@
              75)))))
 
 (deftest when_i_start_a_game
-  (testing "there are 75 balls available"
-    (is (= 75 (count (:available-balls (game/create))))))
-  (testing "is different from another one"
-    (is (not= (game/create) (game/create)))))
+    (testing "there are 75 balls available"
+      (is (= 75 (count (:available-balls (game/create))))))
+    (testing "is different from another one"
+      (is (not= (game/create) (game/create)))))
 
